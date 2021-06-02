@@ -14,19 +14,27 @@ import java.util.Random;
 
 public class ListActivity extends AppCompatActivity {
     private final static String TAG = "List Activity";
-    private final ArrayList<User> userList = new ArrayList<>();
+    static ArrayList<User> userList;
+    DBHandler dbHandler;
+    CustomAdapter cAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
+        /*
         for (int i = 0; i < 20; ++i) {
             userList.add(new User(
                     "Name" + rng(), "Description " + rng(), i, rngFollow()
             ));
         }
         Log.v(TAG, "List Activity Created");
+
+         */
+
+        dbHandler = new DBHandler(this,null,null,1);
+        userList = dbHandler.getUsers();
 
         RecyclerView recyclerView = findViewById(R.id.rv);
         CustomAdapter cAdapter = new CustomAdapter(userList, ListActivity.this);
