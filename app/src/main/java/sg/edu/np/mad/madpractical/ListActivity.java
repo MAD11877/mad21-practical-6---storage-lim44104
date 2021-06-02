@@ -33,7 +33,7 @@ public class ListActivity extends AppCompatActivity {
 
          */
 
-        dbHandler = new DBHandler(this,null,null,1);
+        dbHandler = new DBHandler(this);
         userList = dbHandler.getUsers();
 
         RecyclerView recyclerView = findViewById(R.id.rv);

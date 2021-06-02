@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.v(TAG,"Create");
-        dbHandler = new DBHandler(this,null,null,1);
+        dbHandler = new DBHandler(this);
 
         User user = new User(
                 "Hello World!",
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
                 false
         );
 
-        TextView userName = findViewById(R.id.userName);    //define user name.
+        TextView userName = findViewById(R.id.txtName);    //define user name.
         userName.setText("MAD" + getIntent().getIntExtra("randomNum",0));
 
         TextView userDescription = findViewById(R.id.userDescription);  //define description

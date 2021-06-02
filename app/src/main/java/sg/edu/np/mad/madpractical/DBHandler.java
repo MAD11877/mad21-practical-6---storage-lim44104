@@ -20,9 +20,9 @@ public class DBHandler extends SQLiteOpenHelper {
     public static String COLUMN_FOLLOWED = "followed";
     public static int DATABASE_VERSION = 1;
 
-    public DBHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version)
+    public DBHandler(Context context)
     {
-        super(context, DATABASE_NAME, factory, DATABASE_VERSION );
+        super(context, DATABASE_NAME, null, DATABASE_VERSION );
     }
 
     @Override
